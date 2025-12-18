@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meta Sweet Treats</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    header {
+      background: url('assets/cake-hero.jpg') center/cover no-repeat;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Overlay so text is readable */
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      /* dark transparent overlay */
+    }
+
+    header .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+    }
+
+    .btn-pink {
+      background-color: #e75480;
+      color: white;
+    }
+
+    .btn-brown {
+      background-color: #6b4226;
+      color: white;
+    }
+
+    #photo-grid {
+      background-color: #fff7f7;
+      /* light pinkish background */
+      padding: 60px 0;
+    }
+
+    #photo-grid h2 {
+      font-weight: 700;
+      color: #e75480;
+      margin-bottom: 40px;
+    }
+
+    /* Masonry grid setup */
+    #photo-grid .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      grid-auto-rows: 180px;
+      /* base height */
+      gap: 15px;
+    }
+
+    #photo-grid .grid-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 2px solid #e75480;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    #photo-grid .grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    #photo-grid .grid-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Different sizes for variety */
+    .grid-item.wide {
+      grid-column: span 2;
+    }
+
+    .grid-item.tall {
+      grid-row: span 2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #f8d7da;">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="/assets/Metalogo.png" alt="Meta Sweet Treats" width="50" height="50" class="me-2 rounded-circle">
+        <span class="fw-bold" style="color:#5a2a2a;">Meta Sweet Treats</span>
+      </a>
+
+      <!-- Toggler for mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="#about" style="color:#5a2a2a;">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="#services" style="color:#5a2a2a;">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="#gallery" style="color:#5a2a2a;">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="#order" style="color:#5a2a2a;">Order</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header>
+    <div class="container">
+      <h1 class="fw-bold">Sweet Dreams<br><span style="color:#e75480;">Come True</span></h1>
+      <p class="lead">Welcome to Meta Sweet Treats, where every cake is crafted to perfection.</p>
+      <a href="#gallery" class="btn btn-pink btn-lg m-2">Explore Our Cakes</a>
+      <a href="#contact" class="btn btn-brown btn-lg m-2">Order Now</a>
+      <div class="mt-3">
+        <span class="me-3">🍰 Fresh Daily</span>
+        <span class="me-3">🎂 Custom Orders</span>
+        <span>⭐ Premium Quality</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="py-5" style="background-color:#fdf9f9;">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- Text Content -->
+        <div class="col-lg-6">
+          <h2 class="fw-bold mb-4" style="color:#e75480;">Our Sweet Story</h2>
+          <p>At <strong>Meta Sweet Treats</strong>, we believe every celebration deserves something truly special.
+            From birthdays to weddings, our artisanal cakes are crafted with passion, precision, and a sprinkle of love.
+          </p>
+
+          <p>We combine traditional recipes with modern artistry to create cakes that not only look stunning,
+            but taste unforgettable. Our mission is simple: turn your sweetest dreams into reality.</p>
+
+          <!-- Stats -->
+          <div class="row mt-4">
+            <div class="col-4 text-center">
+              <h4 style="color:#e75480;">5+</h4>
+              <p class="text-muted">Years of Excellence</p>
+            </div>
+            <div class="col-4 text-center">
+              <h4 style="color:#d4a017;">500+</h4>
+              <p class="text-muted">Happy Customers</p>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <div class="card border-0 shadow-sm">
+            <img src="assets/cake-making.jpg" class="img-fluid rounded" alt="Cake Making">
+            <div class="card-img-overlay d-flex align-items-end">
+              <div class="bg-dark bg-opacity-50 text-white p-2 rounded">
+                <h6 class="mb-0">Artisan Craftsmanship</h6>
+                <small>Every cake is a masterpiece</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Our Sweet Services</h2>
+      <p class="text-center mb-5">
+        From intimate gatherings to grand celebrations, we create the perfect sweet centerpiece for every occasion.
+      </p>
+
+      <div class="row g-4">
+
+        <!-- Birthday Cakes -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm text-center d-flex flex-column">
+            <div class="card-body d-flex flex-column">
+              <div class="mb-3">
+                <i class="fas fa-birthday-cake fa-2x text-warning"></i>
+              </div>
+              <h5 class="card-title">Birthday Cakes</h5>
+              <p class="card-text">Fun and delicious cakes for celebrations of all ages.</p>
+              <ul class="list-unstyled text-start">
+                <li>🎂 Photo Printing</li>
+                <li>🎉 Theme Designs</li>
+                <li>🎁 Surprise Elements</li>
+              </ul>
+              <a href="#order" class="btn btn-primary mt-auto">Order Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom Desserts -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm text-center d-flex flex-column">
+            <div class="card-body d-flex flex-column">
+              <div class="mb-3">
+                <i class="fas fa-cookie fa-2x text-success"></i>
+              </div>
+              <h5 class="card-title">Custom Desserts</h5>
+              <p class="card-text">Cupcakes and specialty desserts made to order.</p>
+              <ul class="list-unstyled text-start">
+                <li>🧁 Custom Dessert Orders</li>
+                <li>🎉 Event Desserts</li>
+              </ul>
+              <a href="#order" class="btn btn-primary mt-auto">Order Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Corporate Orders -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm text-center d-flex flex-column">
+            <div class="card-body d-flex flex-column">
+              <div class="mb-3">
+                <i class="fas fa-briefcase fa-2x text-secondary"></i>
+              </div>
+              <h5 class="card-title">Corporate Orders</h5>
+              <p class="card-text">Professional catering for business events and celebrations.</p>
+              <ul class="list-unstyled text-start">
+                <li>📦 Bulk Orders</li>
+                <li>🏢 Logo Printing</li>
+                <li>⏱️ Timely Delivery</li>
+                <li>💼 Corporate Discounts</li>
+              </ul>
+              <a href="#order" class="btn btn-primary mt-auto">Order Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Gallery</h2>
+
+      <!-- Carousel -->
+      <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators (dots) -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="3"></button>
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="4"></button>
+          <!-- Add more buttons as needed -->
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/cake chocolate 19.jpg" class="d-block w-100 rounded shadow" alt="Gallery Image 1">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/cake-doll 2.jpg" class="d-block w-100 rounded shadow" alt="Gallery Image 2">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/cake-cocomelon-22.jpg" class="d-block w-100 rounded shadow" alt="Gallery Image 3">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/cake-nenyasha-20.jpg" class="d-block w-100 rounded shadow" alt="Gallery Image 4">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/cake3.jpg" class="d-block w-100 rounded shadow" alt="Gallery Image 5">
+          </div>
+          <!-- Keep adding more carousel-item blocks for more images -->
+        </div>
+
+        <!-- Controls (arrows) -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Our Menu</h2>
+
+      <!-- Category Tabs with Animated Borders -->
+      <ul class="nav nav-tabs justify-content-center" id="menuTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active border-animate" id="cakes-tab" data-bs-toggle="tab" data-bs-target="#cakes"
+            type="button" role="tab">Cakes</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link border-animate" id="cupcakes-tab" data-bs-toggle="tab" data-bs-target="#cupcakes"
+            type="button" role="tab">Cupcakes</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link border-animate" id="muffins-tab" data-bs-toggle="tab" data-bs-target="#muffins"
+            type="button" role="tab">Muffins</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link border-animate" id="special-tab" data-bs-toggle="tab" data-bs-target="#special"
+            type="button" role="tab">Special</button>
+        </li>
+      </ul>
+
+      <!-- Tab Content -->
+      <div class="tab-content mt-4" id="menuTabsContent">
+        <!-- Cakes -->
+        <div class="tab-pane fade show active" id="cakes" role="tabpanel">
+          <section id="photo-grid" class="py-5 bg-light">
+            <div class="container">
+              <h2 class="text-center mb-4">Photo Grid</h2>
+              <div class="grid">
+                <div class="grid-item wide"><img src="assets/cake-10.jpg" alt="Dessert 1"></div>
+                <div class="grid-item tall"><img src="assets/cake-liya 18.jpg" alt="Cupcake 1"></div>
+                <div class="grid-item"><img src="assets/cake2.jpg" alt="Muffin 1"></div>
+                <div class="grid-item"><img src="assets/cake3.jpg" alt="Special 1"></div>
+                <div class="grid-item wide tall"><img src="assets/birthday-cake 7.jpg" alt="Cake 1"></div>
+                <div class="grid-item"><img src="assets/cake-aiden-21.jpg" alt="Cake 2"></div>
+                <div class="grid-item"><img src="assets/cake-wedding 3.jpg" alt="Cake 3"></div>
+                <div class="grid-item tall"><img src="assets/cake-choc.jpg" alt="Cupcake 2"></div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Cupcakes -->
+        <div class="tab-pane fade" id="cupcakes" role="tabpanel">
+
+
+          <section id="photo-grid" class="py-5 bg-light">
+            <div class="container">
+              <h2 class="text-center mb-4">Photo Grid</h2>
+              <div class="grid">
+                <div class="grid-item wide"><img src="assets/cup-cake5.jpg" alt="Dessert 1"></div>
+                <div class="grid-item tall"><img src="assets/cup-cake6.jpg" alt="Cupcake 1"></div>
+                <div class="grid-item"><img src="assets/cup-cake9.jpg" alt="Muffin 1"></div>
+                <div class="grid-item"><img src="assets/cup-cake11.jpg" alt="Special 1"></div>
+                <div class="grid-item wide tall"><img src="assets/cake1.jpg" alt="Cake 1"></div>
+                <div class="grid-item"><img src="assets/cake2.jpg" alt="Cake 2"></div>
+                <div class="grid-item"><img src="assets/cake3.jpg" alt="Cake 3"></div>
+                <div class="grid-item tall"><img src="assets/cupcake2.jpg" alt="Cupcake 2"></div>
+              </div>
+            </div>
+          </section>
+
+
+        </div>
+
+        <!-- Muffins -->
+        <div class="tab-pane fade" id="muffins" role="tabpanel">
+          <section id="photo-grid" class="py-5 bg-light">
+            <div class="container">
+              <h2 class="text-center mb-4">Photo Grid</h2>
+              <div class="grid">
+                <div class="grid-item wide"><img src="assets/desserts.jpg" alt="Dessert 1"></div>
+                <div class="grid-item tall"><img src="assets/cupcake1.jpg" alt="Cupcake 1"></div>
+                <div class="grid-item"><img src="assets/muffin1.jpg" alt="Muffin 1"></div>
+                <div class="grid-item"><img src="assets/special1.jpg" alt="Special 1"></div>
+                <div class="grid-item wide tall"><img src="assets/cake1.jpg" alt="Cake 1"></div>
+                <div class="grid-item"><img src="assets/cake2.jpg" alt="Cake 2"></div>
+                <div class="grid-item"><img src="assets/cake3.jpg" alt="Cake 3"></div>
+                <div class="grid-item tall"><img src="assets/cupcake2.jpg" alt="Cupcake 2"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Specials -->
+        <div class="tab-pane fade" id="special" role="tabpanel">
+          <h1>Specials will appear here</h1>
+          <!-- <section id="photo-grid" class="py-5 bg-light">
+            <div class="container">
+              <h2 class="text-center mb-4">Photo Grid</h2>
+              <div class="grid">
+                <div class="grid-item wide"><img src="assets/desserts.jpg" alt="Dessert 1"></div>
+                <div class="grid-item tall"><img src="assets/cupcake1.jpg" alt="Cupcake 1"></div>
+                <div class="grid-item"><img src="assets/muffin1.jpg" alt="Muffin 1"></div>
+                <div class="grid-item"><img src="assets/special1.jpg" alt="Special 1"></div>
+                <div class="grid-item wide tall"><img src="assets/cake1.jpg" alt="Cake 1"></div>
+                <div class="grid-item"><img src="assets/cake2.jpg" alt="Cake 2"></div>
+                <div class="grid-item"><img src="assets/cake3.jpg" alt="Cake 3"></div>
+                <div class="grid-item tall"><img src="assets/cupcake2.jpg" alt="Cupcake 2"></div>
+              </div>
+            </div>
+          </section> -->
+        </div>
+
+  </section>
+
+
+
+  <!-- <section id="photo-grid" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Photo Grid</h2>
+      <div class="grid">
+        <div class="grid-item wide"><img src="assets/desserts.jpg" alt="Dessert 1"></div>
+        <div class="grid-item tall"><img src="assets/cupcake1.jpg" alt="Cupcake 1"></div>
+        <div class="grid-item"><img src="assets/muffin1.jpg" alt="Muffin 1"></div>
+        <div class="grid-item"><img src="assets/special1.jpg" alt="Special 1"></div>
+        <div class="grid-item wide tall"><img src="assets/cake1.jpg" alt="Cake 1"></div>
+        <div class="grid-item"><img src="assets/cake2.jpg" alt="Cake 2"></div>
+        <div class="grid-item"><img src="assets/cake3.jpg" alt="Cake 3"></div>
+        <div class="grid-item tall"><img src="assets/cupcake2.jpg" alt="Cupcake 2"></div>
+      </div>
+    </div>
+  </section> -->
+  </div>
+
+  </section>
+
+
+  <!-- Contact Section -->
+<section id="order" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Place Your Order</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form action="https://formspree.io/f/xkowwklk" method="POST" class="p-4 border rounded shadow-sm bg-white">
+          <!-- Name -->
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+
+          <!-- Mobile -->
+          <div class="mb-3">
+            <label for="mobile" class="form-label">Mobile Number</label>
+            <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+          </div>
+
+          <!-- Cake Selection -->
+          <div class="mb-3">
+            <label for="cake" class="form-label">Select Cake Type</label>
+            <select class="form-select" id="cake" name="cake">
+              <option selected disabled>Choose...</option>
+              <option value="Birthday Cake">Birthday Cake</option>
+              <option value="Wedding Cake">Wedding Cake</option>
+              <option value="Metric Dance Cake">Metric Dance Cake</option>
+              <option value="Anniversary Cake">Anniversary Cake</option>
+            </select>
+          </div>
+
+          <!-- Dessert Selection -->
+          <div class="mb-3">
+            <label for="Flavour" class="form-label">Select Flavour</label>
+            <select class="form-select" id="Flavour" name="Flavour">
+              <option selected disabled>Choose...</option>
+              <option value="Chocolate">Chocolate</option>
+              <option value="Vanilla">Vanilla</option>
+              <option value="Red valvet">Red velvet</option>
+              <option value="Carrot Cake">Carrot Cake</option>
+              <option value="Lemon Poppy">Lemon Poppy</option>
+              <option value="Blueberry">Blueberry</option>
+              <option value="Cookies and Cream">Cookies and Cream</option>
+            </select>
+          </div>
+
+          <!-- Muffin Selection -->
+          <div class="mb-3">
+            <label for="muffins" class="form-label">Select Muffins</label>
+            <select class="form-select" id="muffins" name="muffins">
+              <option selected disabled>Choose...</option>
+              <option value="Blueberry Muffins">Blueberry Muffins</option>
+              <option value="Chocolate Muffins">Chocolate Muffins</option>
+              <option value="Banana Muffins">Banana Muffins</option>
+              <option value="Vanilla Muffins">Vanilla Muffins</option>
+              <option value="Carrot Muffin">Carrot Muffin</option>
+            </select>
+          </div>
+
+          <!-- Quantity -->
+          <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" min="1" required>
+          </div>
+
+          <!-- Message -->
+          <div class="mb-3">
+            <label for="message" class="form-label">Special Instructions</label>
+            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write your message"></textarea>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="btn btn-danger w-100">Submit Order</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map Section -->
+<section class="mt-5">
+  <div class="container-fluid p-0">
+    <h2 class="text-center mb-3">Find Us</h2>
+    <div class="ratio ratio-16x9">
+      <!-- Google Map Embed -->
+      <iframe src="https://www.google.com/maps?q=1+Smart+Street,+Sydenham,+Port+Elizabeth&output=embed" width="600"
+        height="450" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+
+  <footer class="bg-danger text-white text-center py-4 mt-5">
+    <div class="container">
+      <h5 class="fw-bold">🍰 Sweet Treats Cake Shop</h5>
+      <p class="mb-2">Delicious cakes made with love, just for you!</p>
+
+      <div class="container my-4">
+        <div class="row text-center">
+          <div class="col-12 col-md-4 mb-3">
+            <strong>Address:</strong><br>
+            1 Smart Street, Caronel Court, Sydenham, Port Elizabeth
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <strong>Email:</strong><br>
+            <a href="mailto:metasweetreats@gmail.com">metasweetreats@gmail.com</a>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <strong>Phone:</strong><br>
+            <a href="tel:0833815300">+27659102126</a>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="mb-2">
+  <a href="https://www.facebook.com/share/16QydkvaxB/" class="text-white me-3">
+    <i class="bi bi-facebook"></i>
+  </a>
+  <a href="https://www.instagram.com/metasweettreats?igsh=bW05dmRtdHBxcjBs" class="text-white me-3">
+    <i class="bi bi-instagram"></i>
+  </a>
+  <a href="https://tiktok.com/@metasweetreats1" class="text-white me-3">
+    <i class="bi bi-tiktok"></i>
+  </a>
+  <a href="https://wa.me/27659102126" class="text-white">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+</div>
+
+      <p class="mb-0">&copy; 2025 Sweet Treats. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
